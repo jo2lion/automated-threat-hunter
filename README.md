@@ -1,14 +1,14 @@
-# Automated Threat Hunter (Real-Time Log Analysis Pipeline)
+# Automated Threat Hunter (Real-Time Threat Intelligence Dashboard)
 
 ## Project Overview
-This project simulates a live Security Operations Center (SOC) workflow by automating the triage of suspicious network traffic. The script ingests local network logs, extracts IP addresses, and correlates them against real-world threat intelligence via the VirusTotal API.
+This project delivers a full-stack Security Operations Center (SOC) workflow application that automates the triage of suspicious network traffic. Built using Python and Streamlit, the application transforms raw log data into an interactive, real-time threat intelligence dashboard backed by the live VirusTotal API.
 
 ## Core Features
-* **Secure Credential Management:** Utilizes environment variables (`.env`) to protect active API keys.
-* **Automated Log Parsing:** Sanitizes and processes raw, messy log data automatically.
-* **Threat Intelligence Correlation:** Cross-references active indicators of compromise (IOCs) with global security engines.
+* **Interactive Frontend Dashboard:** Built with Streamlit to enable security analysts to paste raw network indicators directly into a web UI.
+* **Secure Credential Management:** Utilizes environment variables via `python-dotenv` to isolate production API keys from version control.
+* **Live Threat Triage Pipelines:** Features dynamic visual feedback (progress tracking and severity-based alerting) based on real-world reputation scores.
 
-## How It Works
-1. The system reads network connection events from a local file (`logs/suspicious_ips.txt`).
-2. The Python script extracts the endpoints and requests live data from VirusTotal.
-3. High-risk indicators trigger an immediate alert flag for incident responders.
+## Architecture & Workflow
+1. **Ingestion:** The analyst enters a list of suspected indicators of compromise (IOCs) into the UI text interface.
+2. **Analysis:** The backend pipeline strips whitespace, validates formats, and initiates concurrent queries to the VirusTotal REST API.
+3. **Visualization:** High-risk vectors trigger immediate visual warning blocks detailing engine detection counts, facilitating rapid incident response.
