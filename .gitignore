@@ -1,0 +1,7 @@
+# Ignore API keys and local environment variables
+.env
+
+# Ignore local logs or temporary files
+*.log
+__pycache__/
+.DS_Store
